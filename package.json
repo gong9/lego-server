@@ -7,8 +7,8 @@
     "start": "nodemon src/index.js",
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["server","node"],
+  "author": "gong",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

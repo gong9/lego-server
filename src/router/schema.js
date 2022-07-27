@@ -23,7 +23,7 @@ router.post('/save', function(req, res) {
   const schemaStr = JSON.stringify(req.body.params)
 
   try {
-    fs.writeFileSync(path.join(__dirname, '../../temp/db.txt'), schemaStr)
+    fs.writeFileSync(path.join(__dirname, '../../db/db.txt'), schemaStr)
   } catch (err) {
     console.error(err)
   }
@@ -36,7 +36,7 @@ router.post('/save', function(req, res) {
 router.get('/getSchema', (req, res) => {
   let resData = {}
   try {
-    resData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../temp/db.txt'), 'utf8'))
+    resData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../db/db.txt'), 'utf8'))
   } catch (err) {
     console.error(err)
   }
@@ -50,7 +50,7 @@ router.get('/getSchema', (req, res) => {
 
 /** 下载 组件信息 */
 router.get('/download', (req, res) => {
-  const filepath = path.join(__dirname, '../../temp/db.txt')
+  const filepath = path.join(__dirname, '../../db/db.txt')
   res.download(filepath)
 })
 
@@ -59,7 +59,7 @@ router.post('/upload', upload.single('file'), function(req, res) {
   const compFileBuffer = req.file.buffer
   let resData = {}
   try {
-    fs.writeFileSync(path.join(__dirname, '../../temp/db.txt'), compFileBuffer)
+    fs.writeFileSync(path.join(__dirname, '../../db/db.txt'), compFileBuffer)
     resData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../temp/db.txt'), 'utf8'))
   } catch (error) {
     res.json({

@@ -49,3 +49,5 @@ router.get('/user', (req, res) => {
     message: '登录成功',
   })
 })
+
+module.exports = router

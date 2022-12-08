@@ -18,7 +18,7 @@ router.post('/login', (req, res) => {
 /**
  * 获取用户信息
  */
-router.post('/user', (req, res) => {
+router.get('/user', (req, res) => {
   const token = req.headers.Authorization
 
   if (

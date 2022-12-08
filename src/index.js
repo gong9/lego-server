@@ -12,6 +12,7 @@ app.use(express.json())
 
 // lowcode 相关路由
 app.use('/schema', require('./router/schema'))
+app.use('/admin', require('./router/admin'))
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

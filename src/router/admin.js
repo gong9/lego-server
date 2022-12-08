@@ -19,7 +19,7 @@ router.post('/login', (req, res) => {
  * 获取用户信息
  */
 router.get('/user', (req, res) => {
-  const token = req.headers.Authorization
+  const token = req.headers.authorization
 
   if (
     token !== 'ab8dceca-0a9a-4ff0-86e1-e5c9e69aade7'
@@ -46,7 +46,7 @@ router.get('/user', (req, res) => {
         },
       ],
     },
-    message: '登录成功',
+    message: '',
   })
 })
 

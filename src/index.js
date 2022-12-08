@@ -1,18 +1,19 @@
 const express = require('express')
 const cors = require('cors')
-
 const app = express()
-app.use(express.static('db'))
+const PORT = process.env.PORT || 3030
 
+app.use(express.static('db'))
 app.use(cors())
 app.use(express.urlencoded({
-  extended: false
+  extended: false,
 }))
 app.use(express.json())
 
-// 路由
+// lowcode 相关路由
 app.use('/schema', require('./router/schema'))
 
-app.listen(8888, () => {
+app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log('server start')
 })

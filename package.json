@@ -5,9 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
-  "keywords": ["server","node"],
+  "keywords": [
+    "server",
+    "node"
+  ],
   "author": "gong",
   "license": "ISC",
   "dependencies": {
@@ -17,16 +22,13 @@
     "multer": "^1.4.3"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.33.1",
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
     "babel-eslint": "10.1.0",
     "commitizen": "^4.2.5",
     "cz-customizable": "^6.3.0",
-    "eslint": "6.7.2",
-    "eslint-plugin-import": "2.20.2",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.0",
+    "eslint": "^8.29.0",
     "husky": "^7.0.4",
     "lint-staged": "^9.5.0",
     "nodemon": "^2.0.19"
